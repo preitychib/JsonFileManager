@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>JSON Editor</title>
+</head>
+
+<body>
+  <div class="img">
+    <div class="container">
+      <div class="header">
+        <div class="jotform-icon"></div>
+      </div>
+      <div class="start">
+        <h2 class="title1">JSON File Editor</h2>
+        <h1 class="title2">Easily create and edit json files.</h1>
+        <p class="introduce"> You can access your json file and <br> make changes to it on the web.</p>
+        <label for="fileInput" class="button">Get Started
+          <input type="file" id="fileInput" accept=".json" style="display: none;">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="jsonModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModalBtn">&times;</span>
+      <h2 style="font-size: 1.2rem;">Edit JSON File</h2>
+      <textarea id="jsonContent"></textarea>
+      <div class="modal-buttons">
+        <button id="modal-buttons-save">Save</button>
+        <button id="modal-buttons-clear">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="under">
+    <div class="container">
+      <div class="copy">Copyright © 2023</div>
+      <div class="sos-med">
+        <a href="https://github.com/preitychib">
+          <div class="github"></div>
+        </a>
+        <a href="https://www.linkedin.com/in/preity-chib/">
+          <div class="linkedin"></div>
+        </a>
+        <a href="#">
+          <div class="mail"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

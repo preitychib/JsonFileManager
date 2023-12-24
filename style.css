@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  --light: hsl(220, 50%, 90%);
+  --background: linear-gradient(
+    to right,
+    hsl(210, 30%, 20%),
+    hsl(255, 30%, 25%)
+  );
+  --border-color: hsla(0, 0%, 100%, 0.2);
+  --shadow-1: hsla(236, 50%, 50%, 0.3);
+}
+.container {
+  margin: auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+.img {
+  background-image: url(./Media/main_bg_image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 0 100px;
+  background-attachment: fixed;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: Sans-serif;
+  text-decoration: none;
+  margin-bottom: 70px;
+}
+.title1 {
+  color: #ff8001;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+.title2 {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+.introduce {
+  color: #ffffffb3;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+  font-size: 17px;
+}
+.jotform-icon {
+  background-image: url(/Media/main_logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 70px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+  border-radius: 0.8rem;
+  color: var(--light);
+  background-color: hsl(220, 25%, 10%);
+  box-shadow: var(--m-shadow, 0.4rem 0.4rem 10.2rem 0.2rem) var(--shadow-1);
+  overflow: hidden;
+  margin: 15% auto;
+  padding: 20px;
+  width: 60%;
+  border: 1px solid #888;
+}
+.modal-buttons {
+  margin-top: -40px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.modal-buttons button {
+  margin-top: 4rem;
+  padding: 1rem 1.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 100rem;
+  transition: 0.2s;
+  cursor: pointer;
+  color: inherit;
+  background: transparent;
+  font-size: 1.4rem;
+  font-family: inherit;
+  letter-spacing: 0.2rem;
+}
+.modal-buttons button:hover,
+.moda-buttons button:focus {
+  background: var(--background);
+  transform: translateY(-0.2rem);
+}
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #888;
+}
+.button {
+  padding: 12px 17px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  background-color: white;
+  font-size: 100%;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+}
+.title3 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 90px;
+}
+
+span {
+  font-size: 40px;
+}
+.under {
+  background-color: hsl(220, 25%, 10%);
+  padding: 10px;
+  display: flex;
+}
+.under .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.copy {
+  font-family: "Work Sans", sans-serif;
+  color: #ffffffb3;
+}
+
+#jsonContent {
+  color: var(--light);
+  background: var(--background);
+  width: 100%;
+  height: 300px;
+  font-family: "Courier New", monospace;
+  resize: none;
+  overflow: auto;
+  /* Styles for the scrollbar */
+  scrollbar-color: var(--border-color) var(--background);
+  scrollbar-width: thin;
+}
+.linkedin {
+  background-image: url("./Media/linkedin_icon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+.sos-med {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.github {
+  background-image: url("./Media/github_icon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+.mail {
+  background-image: url("./Media/mail_icon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
