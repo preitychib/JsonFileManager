@@ -7,17 +7,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedFile = fileInput.files[0];
 
     if (selectedFile) {
-      // Reading content of the selected file as text
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        // Set the content of the textarea to the file content
-        jsonContentTextarea.value = e.target.result;
+      if (selectedFile.type === "application/json") {
+        // Reading content of the selected JSON file as text
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          // Set the content of the textarea to the file content
+          jsonContentTextarea.value = e.target.result;
 
-        // Open the modal
-        openModal();
-      };
-      reader.readAsText(selectedFile);
-      fileInput.value = "";
+          // Open the modal
+          openModal();
+        };
+        reader.readAsText(selectedFile);
+        fileInput.value = "";
+      } else {
+        alert("Please select a valid JSON file.");
+        fileInput.value = "";
+      }
     }
   });
 
@@ -25,17 +30,25 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("modal-buttons-save")
     .addEventListener("click", function () {
       const content = jsonContentTextarea.value;
-      console.log("Saving changes:", content);
-      const blob = new Blob([content], { type: "application/json" });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "edited.json";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      // Close the modal
-      closeModal();
+
+      try {
+        // Validate if the content is valid JSON
+        JSON.parse(content);
+
+        const blob = new Blob([content], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "edited.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        // Close the modal
+        closeModal();
+      } catch (error) {
+        alert("Invalid JSON content. Please correct the JSON syntax.");
+      }
     });
+
   document
     .getElementById("modal-buttons-clear")
     .addEventListener("click", function () {
@@ -49,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
       closeModal();
     });
 
-  //? Function to open the modal
+  // Function to open the modal
   function openModal() {
     jsonModal.style.display = "block";
   }
 
-  //? Function to close the modal
+  // Function to close the modal
   function closeModal() {
     jsonModal.style.display = "none";
   }
