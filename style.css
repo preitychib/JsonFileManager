@@ -18,6 +18,7 @@ body {
   max-width: 1200px;
   padding: 0 20px;
   justify-content: space-between;
+  background-color: var(--background);
 }
 .img {
   background-image: url(./Media/main_bg_image.jpg);
