@@ -11,6 +11,7 @@ body {
   );
   --border-color: hsla(0, 0%, 100%, 0.2);
   --shadow-1: hsla(236, 50%, 50%, 0.3);
+  background-color: var(--background);
 }
 .container {
   margin: auto;
@@ -92,7 +93,8 @@ a {
   text-align: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .modal-buttons button {
@@ -170,7 +172,6 @@ span {
   font-family: "Courier New", monospace;
   resize: none;
   overflow: auto;
-  /* Styles for the scrollbar */
   scrollbar-color: var(--border-color) var(--background);
   scrollbar-width: thin;
 }
@@ -200,4 +201,14 @@ span {
   background-size: cover;
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 800px) {
+  .modal-buttons button {
+    padding: 0.8rem 1.2rem; 
+    font-size: 1.2rem; 
+  }
+  .modal-content {
+    width: 90%; 
+  }
 }
